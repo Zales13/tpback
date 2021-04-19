@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\BlogController::index
+
+admin:
+    path: /admin
+    controller: App\Controller\BlogController::admin
