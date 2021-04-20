@@ -1,14 +1,23 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} | Ajouter un article{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+{% endblock %}
 
 {% block content %}
-	<div class="container">
-		<div class="row">
-			<div class="col s12 m12 l12">
-				<h4>Ajout d'un article</h4>
-			</div>
-		</div>
-		{% include "include/article_form.html.twig" %}
-	</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1>Ajouter un article</h1>
+
+            {% include 'include/article_form.html.twig' %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 {% endblock %}

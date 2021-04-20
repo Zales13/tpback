@@ -18,10 +18,10 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('picture', FileType::class)
-            ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
-            ->add('isPublished', CheckboxType::class)
+            ->add('picture', FileType::class  )
+            ->add('title', TextType::class  )
+            ->add('content', TextareaType::class  )
+            ->add('isPublished', CheckboxType::class )
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'label',

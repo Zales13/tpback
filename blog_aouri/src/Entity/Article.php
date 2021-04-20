@@ -27,7 +27,6 @@ class Article
     private $picture;
 
     /**
-     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $title;
@@ -76,6 +75,11 @@ class Article
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="articles")
      */
     private $categories;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     */
+    private $slug;
 
 
     public function __construct()
@@ -254,5 +258,17 @@ class Article
         return $this;
 
         }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
  
 }
